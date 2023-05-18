@@ -37,6 +37,11 @@ class MYTELEVISION:
             self.volume = volume
     
     # Def up and down volume
-
-
-#end
+    def up_volume(self):
+        if self.volume and self.on < 7:
+            self.volume += 1
+    def down_volume(self):
+        if self.volume and self.on > 1:
+            self.volume -= 1
+            
+#end of the code
