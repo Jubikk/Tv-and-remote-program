@@ -29,46 +29,46 @@ class MyRemote:
         self.TV2_label = tk.Label(self.TV2_frame, text="The channel of TV2 is 1 and the volume level is 1.")
         self.TV2_label.pack(padx=10, pady=15)
 
-        self.channel_up_button = tk.Button(self.main, text="Channel Up", command=self.channel_up)
+        self.channel_up_button = tk.Button(self.main, text="Channel Up", command=self.up_channel)
         self.channel_up_button.pack(pady=10)
 
-        self.channel_down_button = tk.Button(self.main, text="Channel Down", command=self.channel_down)
+        self.channel_down_button = tk.Button(self.main, text="Channel Down", command=self.down_channel)
         self.channel_down_button.pack(pady=10)
 
-        self.volume_up_button = tk.Button(self.main, text="Volume Up", command=self.volume_up)
+        self.volume_up_button = tk.Button(self.main, text="Volume Up", command=self.up_volume)
         self.volume_up_button.pack(pady=10)
 
-        self.volume_down_button = tk.Button(self.main, text="Volume Down", command=self.volume_down)
+        self.volume_down_button = tk.Button(self.main, text="Volume Down", command=self.down_volume)
         self.volume_down_button.pack(pady=10)
     
-    def channel_up(self):
+    def up_channel(self):
         self.TV1.channel_up()
         self.TV2.channel_up()
-        self.update_label()
+        self.update_labels()
 
-    def channel_down(self):
+    def down_channel(self):
         self.TV1.channel_down()
         self.TV2.channel_down()
-        self.update_label()
+        self.update_labels()
 
-    def volume_up(self):
+    def up_volume(self):
         self.TV1.volume_up()
         self.TV2.volume_up()
-        self.update_label()
+        self.update_labels()
 
-    def volume_down(self):
+    def down_volume(self):
         self.TV1.volume_down()
         self.TV2.volume_down()
-        self.update_label()
+        self.update_labels()
     
     def update_labels(self):
         TV1_channel = self.TV1.get_channel()
         TV1_volume = self.TV1.get_volume()
-        self.TV1_label.config(text="TV1's channel is () and volume level is ()".format(TV1_channel, TV1_volume))
+        self.TV1_label.config(text="TV1's channel is {} and volume level is {}".format(TV1_channel, TV1_volume))
 
         TV2_channel = self.TV2.get_channel()
         TV2_volume = self.TV2.get_volume()
-        self.TV2_label.config(text="TV2's channel is () and volume level is ()".format(TV2_channel, TV2_volume))
+        self.TV2_label.config(text="TV2's channel is {} and volume level is {}".format(TV2_channel, TV2_volume))
 
 def main():
     root = tk.Tk()
