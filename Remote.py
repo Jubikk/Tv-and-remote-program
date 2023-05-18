@@ -29,10 +29,10 @@ class MyRemote:
         self.TV2_label = tk.Label(self.TV2_frame, text="The channel of TV2 is 1 and the volume level is 1.")
         self.TV2_label.pack(padx=10, pady=15)
 
-        self.channel_up_button = tk.Button(self.main, text="Channel Up", command=self.up_channel)
+        self.channel_up_button = tk.Button(self.main, text="Channel Up", command=self.channel_up)
         self.channel_up_button.pack(pady=10)
 
-        self.channel_down_button = tk.Button(self.main, text="Channel Down", command=self.down_channel)
+        self.channel_down_button = tk.Button(self.main, text="Channel Down", command=self.channel_down)
         self.channel_down_button.pack(pady=10)
 
         self.volume_up_button = tk.Button(self.main, text="Volume Up", command=self.up_volume)
@@ -41,12 +41,12 @@ class MyRemote:
         self.volume_down_button = tk.Button(self.main, text="Volume Down", command=self.down_volume)
         self.volume_down_button.pack(pady=10)
     
-    def up_channel(self):
+    def channel_up(self):
         self.TV1.channel_up()
         self.TV2.channel_up()
         self.update_labels()
 
-    def down_channel(self):
+    def channel_down(self):
         self.TV1.channel_down()
         self.TV2.channel_down()
         self.update_labels()
