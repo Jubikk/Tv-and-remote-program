@@ -23,10 +23,10 @@ class MYTELEVISION:
 
     # Def up and down channels
     def channel_up(self):
-        if self.channel and self.on < 120:
+        if self.on and self.channel < 120:
             self.channel += 1
     def channel_down(self):
-        if self.channel and self.on > 1:
+        if self.on and self.channel > 1:
             self.channel -= 1
 
     # Def get and set volume
@@ -38,10 +38,10 @@ class MYTELEVISION:
     
     # Def up and down volume
     def volume_up(self):
-        if self.volume and self.on < 7:
+        if self.on and self.volume < 7:
             self.volume += 1
     def volume_down(self):
-        if self.volume and self.on > 1:
+        if self.on and self.volume > 1:
             self.volume -= 1
             
 #end of the code
