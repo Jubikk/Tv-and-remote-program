@@ -15,12 +15,12 @@ class MYTELEVISION:
         self.on = False
 
     # Def get and set channels
-    def get_channels(self):
-        self.channel = self.channel
-    def set_channels(self, channels):
-        self.channel = channels
+    def get_channel(self):
+        return self.channel
+    def set_channel(self, channel):
+        if self.on and 1 <= channel <= 120:
+            self.channel = channel
 
-    # Def get and set volume
 # Def up and down channels
 # Def up and down volume
 
